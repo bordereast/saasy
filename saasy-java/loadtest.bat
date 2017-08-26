@@ -1,0 +1,1 @@
+loadtest -n 10500 -c 6 -k http://localhost:8080

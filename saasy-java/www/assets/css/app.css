@@ -1,0 +1,37 @@
+html, body{
+  height:100%;
+}
+
+/* site wide styles */
+
+
+.pad15 {
+	padding:15px;
+}
+.pad10 {
+	padding:10px;
+}
+.pad5 {
+	padding:5px;
+}
+
+
+
+.log-in-form {
+  border: 1px solid #cacaca;
+  padding: 1rem;
+  border-radius: 0;
+}
+
+/* .body-main-section {
+	position:relative;
+	min-height:100%;
+}
+.main-footer {
+	position: absolute; 
+    left: 0 ; right: 0; bottom: 0;
+  height: 50px;
+  background-color: #2c3840;
+  color: #fff;
+  padding: 3rem;
+} */

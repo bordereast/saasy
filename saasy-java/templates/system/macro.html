@@ -1,0 +1,23 @@
+{% macro createMenuItem(i, locale) %}
+	<li><a href="{[ replace(i.href,locale) ]}">{[ label(i.localeFile,i.localeTitle) ]}</a>
+		{[ createSubMenu(i.children, locale) ]}
+	</li>
+{% endmacro %}  
+{% macro createSubMenu(children,locale) %}
+	{% if children is not empty %}
+		<ul class="nested vertical menu">
+		{% for i in children %}
+			{[ createMenuItem(i, locale) ]}
+		{% endfor %}
+		</uL>
+	{% endif %}
+{% endmacro %}  
+{% macro createMenu(menu,locale) %}
+	{% if menu.items is not empty %}
+		<ul class="vertical menu">
+		{% for i in menu.items %}
+			{[ createMenuItem(i, locale) ]}
+		{% endfor %}
+		</uL>
+	{% endif %}
+{% endmacro %} 

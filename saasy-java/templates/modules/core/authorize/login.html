@@ -1,0 +1,33 @@
+{% extends "../../../system/blank" %} 
+{% block content %}
+<div class="grid-x">
+    <div class="auto cell"></div>
+    <div class="shrink cell">
+        <form class="log-in-form" method="post"
+            action="/{[ locale ]}/app/core/authorize/login/">
+            <h4 class="text-center">{[ label("system",
+                "login_loginmessage") ]}</h4>
+            <label>{[ label("system", "login_email") ]} <input
+                name="email" type="email" placeholder="{[ label("system", "login_email_placeholder")]}">
+            </label> <label>{[ label("system", "login_password") ]} <input
+                name="password" type="password" placeholder="{[ label("system", "login_password")]}">
+            </label> <input id="show-password" type="checkbox"><label
+                for="show-password">{[ label("system",
+                "login_show_password") ]}</label>
+            <p>
+                <input type="submit" class="button expanded"
+                    value="{[ label("system", "login_log_in")]}">
+            </p>
+            <p class="text-center">
+                <a href="#">{[ label("system",
+                    "login_forgot_password") ]}</a>
+            </p>
+            <p class="text-center">
+                <a href="/{[ locale ]}/app/core/authorize/register/">{[
+                    label("system", "login_go_register") ]}</a>
+            </p>
+        </form>
+    </div>
+    <div class="auto cell"></div>
+</div>
+{% endblock %}

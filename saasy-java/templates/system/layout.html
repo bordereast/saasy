@@ -1,0 +1,73 @@
+<!doctype html>
+<html class="" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{[ title ]}</title>
+    <!-- Compressed CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/css/foundation.min.css" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.1.1/motion-ui.min.css" />
+	<script src="https://use.fontawesome.com/1cdc301e20.js"></script>
+	<link rel="stylesheet" href="/static/assets/css/app.css" />
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+  </head>
+  {% flush %}
+<body>
+{% import "system/macro" %} 
+    <div class="off-canvas-wrapper">
+      <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+
+        <div class="off-canvas position-left reveal-for-large" id="side-menu" data-off-canvas data-position="left">
+          <div class="row column">
+            <h5 class="pad10">{[ label("system", "system_saasy") ]}</h5>
+              
+				{[ createMenu(leftmenu, locale) ]}
+          </div>
+        </div>
+
+        <div class="body-main-section off-canvas-content" data-off-canvas-content>
+          <div class="title-bar hide-for-large">
+            <div class="title-bar-left">
+              <button class="menu-icon" type="button" data-open="side-menu"></button>
+              <span class="title-bar-title">SaaSy</span>
+            </div>
+          </div>
+          <div class="callout primary">
+            <div class="row column">
+              Main header
+            </div>
+          </div>
+          
+          <section class="main-section row small-up-2 medium-up-3 large-up-4 pad15">
+          <!-- breadcrumbs -->
+            {% parallel %}
+				{% include "system/breadcrumbs" %}
+			{% endparallel %}
+			{% flush %}
+          <!-- body content -->
+            {% parallel %}
+            	{% block content %}
+				
+				{% endblock %}
+			{% endparallel %}
+			{% flush %}
+          </section>
+
+          
+
+          <section class="main-footer columns shrink footer text-center">
+            Some footer content asdf
+          </section>
+        </div>
+      </div>
+    </div>
+    
+	<!-- Compressed JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/js/foundation.min.js" crossorigin="anonymous"></script>
+    <script>
+      $(document).foundation();
+      $(function(){ $(document).trigger("saasy:ready");});
+    </script>
+  </body>
+</html>

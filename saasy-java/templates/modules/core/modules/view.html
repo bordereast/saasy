@@ -1,0 +1,25 @@
+{% extends "../../../system/layout" %}
+{% block content %}
+<h1>{[ title ]}</h1>
+
+<table>
+	<thead>
+		<tr>
+			<th>{[ label("system", "admin_module_list_col_module") ]}</th>
+			<th>{[ label("system", "admin_module_list_col_action") ]}</th>
+		</tr>
+	</thead>
+	<tbody>
+{% for m in moduleList %}
+		<tr>
+			<td>{[ m.title ]}</td>
+			<td>
+				<a href="/{[ locale ]}/app/core/modules/edit/{[ m.key ]}" title="{[ label("system", "admin_module_list_col_action_edit") ]}">
+					<i class="fa fa-edit fa-2x" aria-hidden="true"></i>
+				</a>
+			</td>
+		</tr>
+{% endfor %}
+	</tbody>
+</table>
+{% endblock %}

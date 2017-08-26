@@ -1,0 +1,11 @@
+<nav aria-label="You are here:" role="navigation">
+  <ul class="breadcrumbs">
+    <li><a href="#">Home</a></li>
+    {% for comp in moduleData.components %}
+	    <li><a href="#">{[ comp.title ]}</a></li>
+		{% for action in comp.actions %}
+			<li>{[ action.title ]}</li>
+		{% endfor %}
+	{% endfor %}
+  </ul>
+</nav>

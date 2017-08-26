@@ -1,0 +1,111 @@
+{% extends "../../../system/layout" %}
+{% block content %}
+<h1>{[ label("system", "admin_module_edit_pagetitle", module.name) ]}</h1>
+
+
+<form>
+	<div class="grid-x">
+		<div class="small-6 cell">
+		    <label>{[ label("system", "admin_module_edit_name") ]}
+		      <input type="text" value="{[ module.name ]}" disabled=disabled placeholder="{[ label("system", "admin_module_edit_name") ]}">
+		    </label>
+  		</div>
+	</div>
+	
+	<div class="grid-x">
+		<div class="small-6 cell">
+		    <label>{[ label("system", "admin_module_edit_type") ]}
+		      <input type="text" value="{[ module.type ]}" disabled=disabled placeholder="{[ label("system", "admin_module_edit_type") ]}">
+		    </label>
+  		</div>
+	</div>
+	
+	
+	<div class="grid-x">
+	  <div class="small-6 cell">
+	    <label>{[ label("system", "admin_module_edit_title") ]}
+	      <input type="text" value="{[ module.title ]}" placeholder="{[ label("system", "admin_module_edit_title") ]}">
+	    </label>
+	  </div>
+	</div>
+	<div class="grid-x">
+	  <div class="small-6 cell">
+	    <label>{[ label("system", "admin_module_edit_description") ]}
+	      <input type="text" value="{[ module.description ]}" placeholder="{[ label("system", "admin_module_edit_description") ]}">
+	    </label>
+	    <p class="help-text" id="delegateNameHelpText">{[ label("system", "admin_module_edit_delegatename_help") ]}</p>
+	  </div>
+	</div>
+	<div class="grid-x">
+	  <div class="small-6 cell">
+	    <label>{[ label("system", "admin_module_edit_delegatename") ]}
+	      <input type="text" value="{[ module.delegateName ]}" placeholder="{[ label("system", "admin_module_edit_delegatename") ]}">
+	    </label>
+	    <p class="help-text" id="delegateNameHelpText">{[ label("system", "admin_module_edit_delegatename_help") ]}</p>
+	  </div>
+	</div>
+	<script>
+		$(document).on("saasy:ready", function(e){
+
+			$("#hidebtn, #auditcolumns").hide();
+			
+			$("#showbtn, #hidebtn").on("click", function(){
+				$("#showbtn, #hidebtn, #auditcolumns").toggle();
+			});
+			
+		});
+	</script>
+	
+	<div class="grid-x">
+		<div class="small-6 cell">
+			<a id="showbtn">{[ label("system", "system_audit_show") ]}</a>
+			<a id="hidebtn">{[ label("system", "system_audit_hide") ]}</a>
+		
+  		</div>
+	</div>
+	<div id="auditcolumns">
+		<div class="grid-x">
+			<div class="small-6 cell">
+			    <label>{[ label("system", "system_createdby") ]}
+			      <input type="text" value="{[ module.createdBy ]}" disabled=disabled placeholder="{[ label("system", "system_createdby") ]}">
+			    </label>
+	  		</div>
+		</div>
+		<div class="grid-x">
+			<div class="small-6 cell">
+			    <label>{[ label("system", "system_createdon") ]}
+			      <input type="text" value="{[ module.createdon ]}" disabled=disabled placeholder="{[ label("system", "system_createdon") ]}">
+			    </label>
+	  		</div>
+		</div>
+		<div class="grid-x">
+			<div class="small-6 cell">
+			    <label>{[ label("system", "system_createdfunc") ]}
+			      <input type="text" value="{[ module.createdFunc ]}" disabled=disabled placeholder="{[ label("system", "system_createdfunc") ]}">
+			    </label>
+	  		</div>
+		</div>
+		<div class="grid-x">
+			<div class="small-6 cell">
+			    <label>{[ label("system", "system_modifiedby") ]}
+			      <input type="text" value="{[ module.modifiedBy ]}" disabled=disabled placeholder="{[ label("system", "system_modifiedby") ]}">
+			    </label>
+	  		</div>
+		</div>
+		<div class="grid-x">
+			<div class="small-6 cell">
+			    <label>{[ label("system", "system_modifiedon") ]}
+			      <input type="text" value="{[ module.modifiedOn ]}" disabled=disabled placeholder="{[ label("system", "system_modifiedon") ]}">
+			    </label>
+	  		</div>
+		</div>
+		<div class="grid-x">
+			<div class="small-6 cell">
+			    <label>{[ label("system", "system_modifiedfunc") ]}
+			      <input type="text" value="{[ module.modifiedFunc ]}" disabled=disabled placeholder="{[ label("system", "system_modifiedfunc") ]}">
+			    </label>
+	  		</div>
+		</div>
+	</div>
+</form>
+{% endblock %}

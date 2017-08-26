@@ -1,0 +1,6 @@
+<h1>SaaSy - {{ module.description }}</h1>
+<ul>
+{% for comp in module.components %}
+	<li>{{ comp.name }} has title {{ comp.title }}</li>
+{% endfor %}
+</ul>

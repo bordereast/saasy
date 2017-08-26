@@ -1,0 +1,29 @@
+<!doctype html>
+<html class="" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{[ title ]}</title>
+    <!-- Compressed CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/css/foundation.min.css" crossorigin="anonymous" />
+	<script src="https://use.fontawesome.com/1cdc301e20.js"></script>
+	<link rel="stylesheet" href="/static/assets/css/app.css" />
+  </head>
+<body>
+{% import "system/macro" %} 
+       <!-- body content -->
+	{% parallel %}
+    {% block content %}
+	
+	{% endblock %}
+	{% endparallel %}
+    
+	<!-- Compressed JavaScript -->
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/js/foundation.min.js" crossorigin="anonymous"></script>
+    <script>
+      $(document).foundation();
+      $(function(){ $(document).trigger("saasy:ready");});
+    </script>
+  </body>
+</html>
